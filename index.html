@@ -1,1 +1,30 @@
+<!Doctype html>
+<html>
+<body>
+<h1>Teste 2!</h1>
+</body>
+<script src="https://unpkg.com/blip-chat-widget" type="text/javascript"></script>
+<script>
+(function () {
+        window.onload = function () {
+          var blipClient = new BlipChat()
+            .withAppKey('dGVzdGVzd2lkZ2V0czpiZjE3MmM2Mi03ZWEzLTRjMDQtYTQ5Yy1lNTFiNDc0NDUxNDQ=')
+            .withEventHandler(BlipChat.ENTER_EVENT, function () {
+              console.log('enter')
+            })
+            .withEventHandler(BlipChat.LEAVE_EVENT, function () {
+              console.log('leave')
+            })
+            .withEventHandler(BlipChat.LOAD_EVENT, function () {
+              console.log('chat loaded')
+            })
+            .withEventHandler(BlipChat.CREATE_ACCOUNT_EVENT, function () {
+              console.log('account created')
+            })
 
+          blipClient.build()
+      }
+    })();
+</script>
+                                
+</html>
